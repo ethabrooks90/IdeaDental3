@@ -2,6 +2,7 @@ import Image from "next/image";
 import { business, hours } from "@/lib/content";
 import { Clock, Phone, Pin } from "../icons";
 import AppointmentForm from "./AppointmentForm";
+import Wordmark from "./Wordmark";
 
 const WORDMARK = "Idea Dental";
 
@@ -91,17 +92,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Screen-width wordmark */}
-        <p
-          aria-label={WORDMARK}
-          className="mt-16 -mb-[0.12em] flex justify-between overflow-hidden pb-[0.16em] font-display text-[16.2vw] font-semibold leading-[0.95] 2xl:text-[260px]"
-        >
-          {WORDMARK.split("").map((ch, i) => (
-            <span key={i} aria-hidden data-wordmark-letter className="inline-block">
-              {ch === " " ? " " : ch}
-            </span>
-          ))}
-        </p>
+        {/* Screen-width wordmark — sizes itself to the row (see Wordmark.tsx) */}
+        <Wordmark text={WORDMARK} />
 
         <div className="flex flex-col gap-4 border-t border-white/10 py-8 text-[14px] text-white/70 md:flex-row md:items-center md:justify-between">
           <p>© {business.name}. All Rights Reserved</p>
