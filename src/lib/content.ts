@@ -18,12 +18,13 @@ export const business = {
 };
 
 export const hours = [
-  { day: "Monday", time: "10:00 AM – 4:00 PM", note: "Surgeries only" },
+  // Client update, 2026-10-01 (Ihna → Jun). Sunday wasn't in the update; kept as Closed.
+  { day: "Monday", time: "8:30 AM – 2:00 PM", note: "Surgeries only" },
   { day: "Tuesday", time: "10:00 AM – 6:00 PM", note: "General dentistry & walk-ins" },
   { day: "Wednesday", time: "10:00 AM – 6:00 PM", note: "General dentistry & walk-ins" },
-  { day: "Thursday", time: "11:00 AM – 4:00 PM", note: "Braces adjustments & surgery" },
+  { day: "Thursday", time: "8:30 AM – 2:00 PM", note: "Surgeries only" },
   { day: "Friday", time: "Closed", note: "" },
-  { day: "Saturday", time: "By appointment only", note: "" },
+  { day: "Saturday", time: "2nd & 4th Saturdays only", note: "" },
   { day: "Sunday", time: "Closed", note: "" },
 ];
 
@@ -172,16 +173,22 @@ export const features = [
   "Flexible payment plans",
 ];
 
-// Live homepage "Compare our prices" table. The "$0 New Patient Exam & X-Rays" row that sits in
-// the same table on the live site is deliberately excluded (promotion — see brief).
+// Client price list, 2026-10-01 (Ihna → Jun) — replaces the live site's old comparison table.
+// The update has no "other dentist" figures, so the comparison column is gone.
 export const pricing = [
-  { item: "Adult Cleaning", ours: "$75", other: "$98" },
-  { item: "Simple Extraction", ours: "$250", other: "$350" },
-  { item: "2-Surface White Filling", ours: "$180", other: "$224" },
-  { item: "Porcelain Crown", ours: "$900", other: "$1,136" },
-  { item: "Child or Adult Braces", ours: "Starting at $3,200", other: "$5,755" },
-  { item: "Invisalign", ours: "$3,800", other: "$5,978" },
-  { item: "Single Implant with Crown", ours: "$3,500", other: "$5,462" },
+  { item: "Adult Cleaning", price: "$75" },
+  { item: "Full Mouth Debridement", price: "$200" },
+  { item: "Deep Cleaning", price: "$500" },
+  { item: "Filling", price: "$250 and up" },
+  { item: "Simple Extraction", price: "$350" },
+  { item: "Surgical Extraction", price: "$450" },
+  { item: "Bone Graft and Membrane", price: "$600" },
+  { item: "Crown", price: "$1,200" },
+  { item: "Root Canal", price: "$800" },
+  { item: "Denture or Partial Denture", price: "$1,200 per arch" },
+  { item: "Implant", price: "$3,500" },
+  { item: "Implant Crown and Abutment", price: "$1,800" },
+  { item: "Braces", price: "$2,500 – $5,500" },
 ];
 
 export const insurance =
@@ -216,11 +223,11 @@ export const testimonials = [
 export const faqs = [
   {
     q: "What are your office hours?",
-    a: "Tuesday and Wednesday, 10am–6pm, for general dentistry and walk-ins. Thursday, 11am–4pm, for braces adjustments and surgery. Monday, 10am–4pm, for surgeries only. Saturday is by appointment; we’re closed Friday and Sunday.",
+    a: "Tuesday and Wednesday, 10am–6pm, for general dentistry and walk-ins. Monday and Thursday, 8:30am–2pm, for surgeries only. We’re open on the 2nd and 4th Saturday of each month, and closed Friday and Sunday.",
   },
   {
     q: "Can I walk in without an appointment?",
-    a: "Yes — Tuesday and Wednesday are open to walk-ins for general dentistry. Monday, Thursday, and Saturday are appointment-based (surgery, braces adjustments, and by-appointment hours).",
+    a: "Yes — Tuesday and Wednesday are open to walk-ins for general dentistry. Monday and Thursday are reserved for surgeries.",
   },
   {
     q: "Do you accept my insurance?",

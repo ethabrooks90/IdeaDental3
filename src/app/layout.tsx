@@ -29,9 +29,9 @@ const jsonLd = {
   url: "https://www.ideadentistry.com/",
   sameAs: business.social.map((s) => s.href),
   openingHoursSpecification: [
-    { dayOfWeek: "Monday", opens: "10:00", closes: "16:00" },
+    // Regular weekly hours only — the 2nd/4th-Saturday schedule can't be expressed here.
+    { dayOfWeek: ["Monday", "Thursday"], opens: "08:30", closes: "14:00" },
     { dayOfWeek: ["Tuesday", "Wednesday"], opens: "10:00", closes: "18:00" },
-    { dayOfWeek: "Thursday", opens: "11:00", closes: "16:00" },
   ].map((h) => ({ "@type": "OpeningHoursSpecification", ...h })),
   knowsLanguage: ["en", "es"],
 };
